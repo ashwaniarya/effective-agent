@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$HOME/.claude/hooks/risk-flag.js\"",
+            "timeout": 5,
+            "statusMessage": "Checking risk flags..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$HOME/.claude/hooks/risk-flag.js\"",
+            "timeout": 5,
+            "statusMessage": "Injecting risk-flag rule..."
+          }
+        ]
+      }
+    ]
+  }
+}
