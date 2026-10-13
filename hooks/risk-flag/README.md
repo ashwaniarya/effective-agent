@@ -12,6 +12,7 @@ risk-flag adds a checkpoint that costs the agent one paragraph and costs you not
 
 - Before a risky step, the agent must write down the **risk**, the **blast radius**, the **undo path**, and the **gate** (who approves).
 - The command itself is blocked until it does. The agent cannot skip the flag by being in a hurry.
+- It still holds in `--dangerously-skip-permissions` (bypass) mode. Tested on Claude Code 2.1.291: with `permissionMode=bypassPermissions`, `git reset --hard HEAD` was denied and the uncommitted file was untouched.
 - Harmless commands (`ls`, `grep`, tests, local edits) pass straight through.
 
 ## What you see
